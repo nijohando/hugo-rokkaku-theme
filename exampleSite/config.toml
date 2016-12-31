@@ -1,0 +1,26 @@
+baseurl = "http://example.com/"
+title = "六角"
+languageCode = "ja-jp"
+hasCJKLanguage = true
+theme = "hugo-rokkaku-theme"
+
+[taxonomies]
+  tag = "tags"
+  archive = "archives"
+
+[params]
+  limitNumberOfLatests = 5
+  logoHtml = "<figure><ul class=\"c-logo\"><li/><li/><li/></ul></figure>"
+  styles = ["/css/logo.css"]
+  github = "example"
+  twitter = "example"
+  copyrightHtml = "Copyright &copy; nijohando.jp 2016&ndash;2017"
+
+  [params.fontAwesome]
+  #  embedCode = "xxxx"
+
+  [params.highlightjs]
+  #  url = "/js/highlight.pack.js"
+
+  [params.ga]
+  #  trackingId = "xxxx"

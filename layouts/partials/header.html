@@ -1,0 +1,12 @@
+<header id="header">
+    <div class="p-signboard">
+      <a class="p-signboard__top-link" href="/">
+        <div class="c-brand">
+          {{ if .Site.Params.logoHtml }}
+            {{ .Site.Params.logoHtml | safeHTML }}
+          {{ end }}
+          <h1>{{ .Site.Title }}</h1>
+        </div>
+      </a>
+  </div>
+</header>

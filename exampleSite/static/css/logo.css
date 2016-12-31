@@ -1,0 +1,27 @@
+.c-logo {
+  list-style-type: none;
+}
+
+.c-logo > li {
+}
+
+.c-logo > li:first-of-type {
+  border-top: 11px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 11px solid #404040;
+  border-left: 22px solid transparent;
+}
+
+.c-logo > li:nth-of-type(2) {
+  background-color: #404040;
+  width: 44px;
+  height: 25px;
+}
+
+.c-logo li:last-of-type {
+  border-top: 11px solid #404040;
+  border-right: 22px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 22px solid transparent;
+}
+

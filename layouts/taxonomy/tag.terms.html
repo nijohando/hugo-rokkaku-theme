@@ -1,0 +1,20 @@
+
+{{ partial "html-header" . }}
+{{ partial "header" . }}
+
+<main id="main">
+  <section class="p-articles">
+    <h1 class="p-articles__title">{{ .Title }}</h1>
+    {{ $data := .Data }}
+    {{ range $key,$value := .Data.Terms.ByCount }}
+    <h2><a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}"> {{ $value.Name }} </a> {{ $value.Count }} </h2>
+    {{ end }}
+    <div class="p-articles__footer">
+      <div class="p-articles__footer__left--none"></div>
+      <div class="p-articles__footer__right"></div>
+    </div>
+  </section>
+</main>
+
+{{ partial "footer" . }}
+{{ partial "html-footer" . }}

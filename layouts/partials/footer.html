@@ -1,0 +1,31 @@
+<footer id="footer">
+  <div class="p-tail">
+    <ul class="p-tail__years">
+      {{ range .Site.Pages.GroupByDate "2006" }}
+      <li class="p-tail__years__year">
+        <a href="/archives/{{ .Key }}">{{ .Key }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    <ul class="p-tail__tags">
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+      <li class="p-tail__tags__tag">
+        <a href="/tags/{{ $name | urlize }}">{{ $name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    <div class="p-tail__end">
+      <div class="p-tail__contact">
+        {{ if .Site.Params.github }}
+        <a href="https://github.com/{{ .Site.Params.github }}"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+        {{ end }}
+        {{ if .Site.Params.twitter }}
+        <a href="https://twitter.com/{{ .Site.Params.twitter }}"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
+        {{ end }}
+      </div>
+      <div class="p-tail__copyright">
+        {{ .Site.Params.copyrightHtml | safeHTML }}
+      </div>
+  </div>
+    </div>
+</footer>

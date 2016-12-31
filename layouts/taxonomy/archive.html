@@ -1,0 +1,19 @@
+
+{{ partial "html-header" . }}
+{{ partial "header" . }}
+
+<main id="main">
+  <section class="p-articles">
+    <h1 class="p-articles__title">{{lower .Title }}</h1>
+    {{ range .Data.Pages }}
+        {{ .Render "summary"}}
+    {{ end }}
+    <div class="p-articles__footer">
+      <div class="p-articles__footer__left--none"></div>
+      <div class="p-articles__footer__right"></div>
+    </div>
+  </section>
+</main>
+
+{{ partial "footer" . }}
+{{ partial "html-footer" . }}

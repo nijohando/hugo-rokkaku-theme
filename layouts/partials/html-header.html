@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ .Site.Title }}</title>
+<link rel="stylesheet" href="/css/theme.css">
+{{ range .Site.Params.styles }}
+<link rel="stylesheet" href="{{ . }}">
+{{ end }}
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Istok+Web|Roboto+Mono">
+{{ if not .Site.Params.fontAwesome.embedCode }}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+{{ else }}
+<script src="https://use.fontawesome.com/{{ .Site.Params.fontAwesome.embedCode }}.js"></script>
+{{ end }}
+{{if .Site.Params.highlightjs.url }}
+<script src="{{ .Site.Params.highlightjs.url}}"></script>
+{{ else }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+{{ end }}
+<script>hljs.initHighlightingOnLoad();</script>
+<body>

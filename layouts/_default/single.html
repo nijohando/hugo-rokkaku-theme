@@ -1,0 +1,59 @@
+{{ partial "html-header" . }}
+
+<div class="pane">
+
+  <div class="pane__main{{ if eq .Params.toc true }}--splited{{ end }}">
+
+{{ partial "header" . }}
+
+<main>
+
+
+<article class="p-article">
+
+  {{ if ne .Date .Lastmod }}
+  <div class="c-stamp-large">
+    <ul>
+      <li>加筆</li>
+      <li>{{ .Lastmod.Format "2006.01.02" }}</li>
+      <li>修正</li>
+    </ul>
+  </div>
+  {{ end }}
+
+  <div class="p-article__title">
+    <div class="c-calendar">
+        <div class="c-calendar__month">{{ index $.Site.Data.jmonth (printf "%d" .Date.Month) }}</div>
+        <div class="c-calendar__day-of-month"><span>{{ .Date.Format "2" }}</span></div>
+        <div class="c-calendar__day-of-week"><span>{{ index $.Site.Data.jweekday (printf "%s" .Date.Weekday) }}</span></div>
+    </div>
+    <h1 class="p-article__title__text">{{ .Title }}{{ if .Draft }}<span class="p-article__title__draft"> ::Draft{{ end }}<span>
+    </h1>
+  </div>
+
+  <section class="p-article__content">
+  {{ .Content }}
+  </section>
+
+</article>
+
+</main>
+
+{{ partial "footer" . }}
+{{ partial "html-footer" . }}
+
+</div>
+
+
+{{ if eq .Params.toc true }}
+<div class="pane__side">
+  <div class="pane__side__content">
+    <div class="pane__side__content__title">目次</div>
+    {{ .TableOfContents }}
+  </div>
+</div>
+{{ end }}
+
+</div>
+
+{{ partial "html-footer" . }}

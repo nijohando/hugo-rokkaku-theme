@@ -1,0 +1,39 @@
+{{ partial "html-header" . }}
+
+<div class="pane">
+<div class="pane__main">
+
+{{ partial "header" . }}
+
+<main>
+
+<section class="p-articles">
+{{ range first .Site.Params.limitNumberOfLatests .Data.Pages.ByLastmod.Reverse }}
+{{ .Render "summary"}}
+{{ end }}
+{{$len := len .Data.Pages}}
+{{$numberOfOtherPages := sub $len .Site.Params.limitNumberOfLatests }}
+{{ if gt $numberOfOtherPages 0 }}
+<div class="p-articles__footer">
+  <div class="p-articles__footer__left--some"></div>
+  <div class="p-articles__footer__right">
+    <span>
+      他 {{ $numberOfOtherPages }} 件の記事があります。
+    </span>
+  </div>
+</div>
+{{ else }}
+<div class="p-articles__footer">
+  <div class="p-articles__footer__left--none"></div>
+  <div class="p-articles__footer__right">
+  </div>
+</div>
+{{ end }}
+</section>
+
+</main>
+
+{{ partial "footer" . }}
+</div>
+</div>
+{{ partial "html-footer" . }}

@@ -1,0 +1,42 @@
+<article class="p-articles__heading">
+
+  <div class="c-calendar">
+      <div class="c-calendar__month">{{ index $.Site.Data.jmonth (printf "%d" .Date.Month) }}</div>
+      <div class="c-calendar__day-of-month"><span>{{ .Date.Format "2" }}</span></div>
+      <div class="c-calendar__day-of-week"><span>{{ index $.Site.Data.jweekday (printf "%s" .Date.Weekday) }}</span></div>
+  </div>
+
+  <div class="c-heading">
+      {{ if ne .Date .Lastmod }}
+      <div class="c-stamp-small">
+        <ul>
+          <li>加筆</li>
+          <li>{{ .Lastmod.Format "2006.01.02" }}</li>
+          <li>修正</li>
+        </ul>
+      </div>
+      {{ end }}
+
+    <div class="c-heading__title">
+
+      <i class="c-heading__title__icon fa fa-tag fa-2x" aria-hidden="true"></i>
+
+      <h1 class="c-heading__title__text"><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h1>
+
+    </div>
+    <div class="c-heading__summary">
+    {{ .Summary | plainify | safeHTML }}
+    {{ if .Truncated }}
+    ...
+    {{ end }}
+    </div>
+    <ul class="c-heading__tags">
+      {{ range .Params.tags }}
+      <li class="c-heading__tags__tag">
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</article>
+
