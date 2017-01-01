@@ -1,6 +1,6 @@
 # Rokkaku
 
-Rokkaku is HUGO theme that put emphasis on readability of Japanese and long sentences.
+Rokkaku is [Hugo](https://github.com/spf13/hugo) theme that put emphasis on readability of Japanese and long sentences.
 
 ## Example site
 
