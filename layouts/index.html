@@ -8,11 +8,12 @@
 <main>
 
 <section class="p-articles">
-{{ range first .Site.Params.limitNumberOfLatests .Data.Pages.ByLastmod.Reverse }}
+{{$limit := .Site.Params.limitNumberOfLatests | default 5}}
+{{ range first $limit .Data.Pages.ByLastmod.Reverse }}
 {{ .Render "summary"}}
 {{ end }}
 {{$len := len .Data.Pages}}
-{{$numberOfOtherPages := sub $len .Site.Params.limitNumberOfLatests }}
+{{$numberOfOtherPages := sub $len $limit }}
 {{ if gt $numberOfOtherPages 0 }}
 <div class="p-articles__footer">
   <div class="p-articles__footer__left--some"></div>
