@@ -7,15 +7,30 @@ archives = "2016"
 toc = true
 +++
 
-「六角」は日本語と長文の読みやさに重きを置いたテーマです。
+『六角』は日本語と長文の読みやすさを重視したHugo用テーマ。
+明朝体のWebフォントをベースとした和風基調と文書構造を把握しやすい２ペイン方式の目次が特徴。
 
 <!--more-->
 
-# カスタマイズ
+# インストール
+
+Hugoのサイトディレクトリのルートでテーマをclone。
+
+```
+git clone https://github.com/nijohando/hugo-rokkaku-theme.git themes/rokkaku
+```
+
+config.toml でテーマを指定。
+
+```toml
+theme = "rokkaku"
+```
+
+# セットアップ
 
 ## ロゴとタイトル
 
-タイトルは *title* プロパティ、ロゴは *params* の *logoHtml* プロパティで定義します。
+画面上部のタイトルとロゴを設定する。
 
 ```toml
 title = "六角"
@@ -23,12 +38,9 @@ title = "六角"
   logoHtml = "<figure><ul class=\"c-logo\"><li/><li/><li/></ul></figure>"
 ```
 
-logoHtmlプロパティにはhtmlコードが直接指定できます。
+## 表示する最新記事件数
 
-
-## 表示する最新記事数
-
-config.tomlの *params* の *limitNumberOfLatests* に表示する最新の記事数を指定します。
+最新記事一覧画面に表示する件数を設定する。
 
 ```toml
 [params]
@@ -37,24 +49,31 @@ config.tomlの *params* の *limitNumberOfLatests* に表示する最新の記�
 
 ## 著作権表示
 
-著作権表示は *params* の *logoHtml* プロパティで定義します。
+画面下部に表示する著作権表示の内容を設定する。
 
 ```toml
 [params]
   copyrightHtml = "Copyright &copy; nijohando.jp 2016&ndash;2017"
 ```
 
-copyrightHtmlプロパティにはhtmlコードが直接指定できます。
+## サイト固有スタイルシートの追加
+
+サイト固有のスタイルシートを追加したい場合、config.toml にてスタイルシートをパスを指定する。
+
+```toml
+[params]
+  styles = ["/css/logo.css"]
+```
 
 ## シンタックスハイライト
 
-デフォルトではCDN上のhighlight.jsを利用します。
+シンタックスハイライトには[highlightjs](https://highlightjs.org/)を利用。デフォルトではCDN版を利用する。
 
 ```html
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 ```
 
-デフォルトでは対応言語が不足している場合、config.tomlに定義することで任意のURL上のhighlight.jsを読み込みます。
+CDN版では対応言語が不足している場合、config.toml にて任意のhighlight.jsを指定可能。
 
 ```toml
 [params]
@@ -64,15 +83,13 @@ copyrightHtmlプロパティにはhtmlコードが直接指定できます。
 
 ## WEBアイコンフォント
 
-[Font Awesome](http://fontawesome.io/)を利用しています。
-
-デフォルトではBootstrap CDN上のfont-awesomeを利用します。
+アイコンフォントに[Font Awesome](http://fontawesome.io/)を利用する。デフォルトではBootstrap CDN版を使用する。
 
 ```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 ```
 
-Bootstrap CDNではなくFont Awesome CDNのembed codeを利用する場合はconfig.tomlにembed codeを定義します。
+Font Awesome CDNのembed code版をを利用したい場合は、 config.toml にて embed code を指定する。
 
 ```toml
 [params]
@@ -82,7 +99,7 @@ Bootstrap CDNではなくFont Awesome CDNのembed codeを利用する場合はco
 
 ## Googleアナリティクス
 
-config.tomlの *params.ga* へ *trackingId* を指定することでGoogleアナリティクスが有効になります。
+Googleアナリティクスを利用する場合は、 config.toml にて トラッキングID を指定する。
 
 
 ```toml
@@ -92,13 +109,14 @@ config.tomlの *params.ga* へ *trackingId* を指定することでGoogleアナ
 ```
 
 
-# 機能説明
+# 日付について
 
 ## 記事の作成日と更新日
 
-記事の作成日と加筆、修正した更新日を区別して表示します。
+記事一覧画面、記事画面ともに記載される日付には作成日が使用される。
+更新日については記事一覧画面では作成日の下に日付印形式(小)で表示され、記事画面では画面右上に日付印形式（大）で表示される。
 
-フロントマターに作成日は *date* プロパティとして、更新日は *lastmod* プロパティとして定義します。(更新が発生していない場合 lastmodプロパティの定義は不要です)
+フロントマターに作成日は *date* プロパティとして、更新日は *lastmod* プロパティとして定義する。(更新が発生していない場合 lastmodプロパティの定義は不要)
 
 ```
 +++
@@ -107,30 +125,27 @@ lastmod = "2016-12-27"
 +++
 ```
 
-lastmodプロパティを定義すると記事の一覧画面では日付（作成日）の下に更新日の日付印(小)が表示されるようになります。
-また記事画面では画面右上に日付印(大)の透かしが表示されます。
+## 日本語化された月と曜日表示
+
+月と曜日が日本語化されている。
+`data/jmonth.toml` `data/jweekday.toml` に月、曜日に応じた文字列が定義可能。
 
 
-## 目次の表示
 
-比較的長文になりがちな技術ブログのための目次表示です。記事毎に目次の表示を有効、無効にできます。
+# 目次について
 
-フロントマターに *toc* プロパティを追加することで **ブラウザのウインドウサイズが800px以上の幅を持つ場合**、画面右側に目次が表示されます。(この画面にも目次が表示されます）
+記事毎に目次の表示を有効、無効が指定できる。  
+フロントマター *toc* プロパティを有効にすることで **ブラウザのウインドウサイズが800px以上の幅を持つ場合** 画面右側に表示される。
 
 ```
 +++
 toc = true
 +++
 ```
-## 日本語化された月と曜日表示
+# 年別の記事一覧表示
 
-月と曜日が日本語化されています。
-`data/jmonth.toml` `data/jweekday.toml` に月、曜日に応じた文字列が定義できるよいうになっています。
-
-
-## 記事の年別グルーピング
-
-Taxonomy `archives` に年を指定することで年別のアーカイブ表示ができます。年別のアーカイブ表示は画面下部のTaxonomyフッタから遷移できます。
+画面下部のTaxonomyフッタに記事の年別一覧画面へのリンクが表示される。
+フロントマター *archives* プロパティ に年を指定することで当該記事が指定の年別記事一覧に表示される。
 
 ```
 +++
