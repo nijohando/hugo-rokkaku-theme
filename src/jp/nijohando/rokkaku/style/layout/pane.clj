@@ -66,8 +66,8 @@
    [(at-media {:max-width (px 599)}
               [:.pane__main :.pane__main--splited
                [:main :#header {
-                       :padding-left (rem 2)
-                       :padding-right (rem 2)}]])]
+                       :padding-left (rem 0.7)
+                       :padding-right (rem 0.7)}]])]
 
    [(at-media {:max-width (px 799)}
               [:.pane__main--splited

@@ -3,6 +3,7 @@
   (:require [garden.units :refer (px rem em percent)]
             [garden.arithmetic :refer (* +)]
             [garden.selectors :refer (& not first-child)]
+            [garden.stylesheet :refer (at-media)]
             [jp.nijohando.rokkaku.style.foundation.base :as base]))
 
 (defn component
@@ -14,7 +15,7 @@
      :width (percent 100)}
     [:.c-stamp-small
      {:position "absolute"
-      :left (px -75)
+      :left (px -73)
       :top (px 55)
       :z-index 0}]]
    [:.c-heading__title
@@ -55,4 +56,13 @@
      {:padding "0 10px 0 0"}]
     [(& (not first-child))
      {:padding "0 10px 0 10px"
-      :border-left (str "2px solid " base/color-fg)}]]])
+      :border-left (str "2px solid " base/color-fg)}]]
+   [(at-media {:max-width (px 599)}
+              [:.c-heading
+               [:.c-stamp-small
+               {:left (px -55)
+                :top (px 55)}]]
+              [:.c-heading__title__text
+               {:font-size base/medium}]
+              [:.c-heading__summary
+               {:margin-left (rem 0.7)}])]])
