@@ -63,6 +63,6 @@
                {:left (px -55)
                 :top (px 55)}]]
               [:.c-heading__title__text
-               {:font-size base/medium}]
+               {:font-size (rem 1.1)}]
               [:.c-heading__summary
                {:margin-left (rem 0.7)}])]])
