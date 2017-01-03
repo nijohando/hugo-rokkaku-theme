@@ -51,6 +51,8 @@
     [(code (not :.hljs))
      {:color base/color-code-fg
       :background-color base/color-code-bg
+      :font-size base/small
+      :font-family base/font-mono
       :padding "0.2rem 0.4rem"}]
     [:p
      {:margin-top base/x-small
