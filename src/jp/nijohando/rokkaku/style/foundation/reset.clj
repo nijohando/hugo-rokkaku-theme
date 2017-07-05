@@ -52,6 +52,10 @@
      :cursor "help"}]
    [:table {:border-collapse "collapse"
             :border-spacing 0}]
+   [:td {:padding ".3rem .5rem"
+         :border "1px solid #eae5e3"}]
+   [:th {:padding ".3rem .5rem"
+         :border "1px solid #eae5e3"}]
    [:hr { :display "block"
          :height "1px"
          :border 0
