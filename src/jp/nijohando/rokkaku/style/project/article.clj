@@ -65,10 +65,19 @@
      {:margin-top base/medium
       :margin-left (* base/small 2)
       :margin-bottom base/medium}]
+    [:table
+     [:thead {:background-color base/color-light-gray
+              :border-bottom (str "3px solid" base/color-gray)}
+      [:th {:padding "0.4rem 0.8rem 0.2rem"}
+       [(& (not (first-of-type))) {:border-left (str "4px solid " base/color-bg)}]]]
+     [:tbody
+      [:tr
+       [(& first-of-type)
+        [:td {:padding "0.8rem 0.4rem"}]] ]
+      [:td {:padding "0.4rem 0.4rem"}]]]
     [:blockquote
-     {
-      :color base/color-quote
-      :border-left (str "4px solid " base/color-quote)
+     {:color base/color-quote
+      :border-left (str "3px solid " base/color-quote)
       :padding-left (rem 1)
       :padding-top (rem 1.5)
       :padding-bottom (rem 1.5)
