@@ -73,7 +73,7 @@
      [:tbody
       [:tr
        [(& first-of-type)
-        [:td {:padding "0.8rem 0.4rem"}]] ]
+        [:td {:padding "0.8rem 0.4rem 0.4rem"}]] ]
       [:td {:padding "0.4rem 0.4rem"}]]]
     [:blockquote
      {:color base/color-quote
