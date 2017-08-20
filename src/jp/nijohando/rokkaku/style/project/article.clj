@@ -120,5 +120,11 @@
        :margin-bottom base/medium
        :font-size base/small}
       [:code
-       {:font-size base/medium}]]]]])
+       {:font-size base/medium}]]]
+    [:sup
+     {:vertical-align "super"
+      :font-size (em 0.5)}]
+    [:sub
+     {:vertical-align "sub"
+      :font-size (em 0.5)} ]]])
 
