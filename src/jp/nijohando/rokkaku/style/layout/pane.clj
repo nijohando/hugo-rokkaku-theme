@@ -35,8 +35,7 @@
      [:ul {:font-size base/small
            :margin-left base/x-small}]]]
 
-   [(at-media {:min-width (px 1000)
-               :max-width (px 1999)}
+   [(at-media {:min-width (px 1000)}
               [:.pane__main :.pane__main--splited
                [:main :#header {:padding-left (rem 5)
                        :padding-right (rem 5)}]]
