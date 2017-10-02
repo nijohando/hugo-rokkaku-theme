@@ -25,7 +25,8 @@
      :font-size (rem 2)
      :color base/color-fg-sub
      :text-align "center"
-     :margin-bottom (rem 3)}]
+     :margin-bottom (rem 3)
+     :overflow "visible"}]
    [:hr:before
     {:content "\"* * *\"" }]])
 
