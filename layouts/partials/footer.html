@@ -15,14 +15,6 @@
       {{ end }}
     </ul>
     <div class="p-tail__end">
-      <div class="p-tail__contact">
-        {{ if .Site.Params.github }}
-        <a href="https://github.com/{{ .Site.Params.github }}"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
-        {{ end }}
-        {{ if .Site.Params.twitter }}
-        <a href="https://twitter.com/{{ .Site.Params.twitter }}"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
-        {{ end }}
-      </div>
       <div class="p-tail__copyright">
         {{ .Site.Params.copyrightHtml | safeHTML }}
       </div>

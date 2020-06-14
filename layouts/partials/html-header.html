@@ -13,15 +13,15 @@
 {{ end }}
 <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Istok+Web|Roboto+Mono">
-{{ if not .Site.Params.fontAwesome.embedCode }}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+{{if .Site.Params.highlightjs.styleUrl }}
+<link rel="stylesheet" href="{{ .Site.Params.highlightjs.styleUrl }}">
 {{ else }}
-<script src="https://use.fontawesome.com/{{ .Site.Params.fontAwesome.embedCode }}.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/styles/tomorrow-night-eighties.min.css">
 {{ end }}
-{{if .Site.Params.highlightjs.url }}
-<script src="{{ .Site.Params.highlightjs.url}}"></script>
+{{if .Site.Params.highlightjs.scriptUrl }}
+<script src="{{ .Site.Params.highlightjs.scriptUrl}}"></script>
 {{ else }}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/highlight.min.js"></script>
 {{ end }}
 <script>hljs.initHighlightingOnLoad();</script>
 <body>

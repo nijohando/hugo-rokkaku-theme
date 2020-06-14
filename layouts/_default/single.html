@@ -24,8 +24,9 @@
   <div class="p-article__title">
     <div class="c-calendar">
         <div class="c-calendar__month">{{ index $.Site.Data.jmonth (printf "%d" .Date.Month) }}</div>
-        <div class="c-calendar__day-of-month"><span>{{ .Date.Format "2" }}</span></div>
-        <div class="c-calendar__day-of-week"><span>{{ index $.Site.Data.jweekday (printf "%s" .Date.Weekday) }}</span></div>
+        <div class="c-calendar__day-of-month">{{ .Date.Format "2" }}</div>
+        <div class="c-calendar__day-of-week">{{ index $.Site.Data.jweekday (printf "%s" .Date.Weekday) }}</div>
+        <div class="c-calendar__year">{{ .Date.Format "2006" }}</div>
     </div>
     <h1 class="p-article__title__text">{{ .Title }}{{ if .Draft }}<span class="p-article__title__draft"> ::Draft{{ end }}<span>
     </h1>
@@ -35,6 +36,30 @@
   {{ .Content }}
   </section>
 
+  <div class="p-article__footer">
+    <section class="p-article__tags">
+      <ul class="p-article__tags">
+        {{ range .Params.tags }}
+        <li class="p-article__tags__tag">
+          <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">#{{ . }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ $related := .Site.RegularPages.Related .  | first 5 }}
+    {{ with $related }}
+    <section class="p-article__related">
+      <hr>
+      <h3 class="p-article__related__title">関連する記事</h3>
+      <ul class="p-article__related__articles">
+        {{ range . }}
+        <li class="p-article__related__article"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+  </div>
+
 </article>
 
 </main>
@@ -42,7 +67,6 @@
 {{ partial "footer" . }}
 
 </div>
-
 
 {{ if eq .Params.toc true }}
 <div class="pane__side">

@@ -10,7 +10,6 @@
     {:display "flex"
      :flex-direction "column"
      :color base/color-fg
-     :border-right (str "2px solid " base/color-fg)
      :padding-right (px 10)
      :width (rem 4)}]
    [:.c-calendar__month
@@ -25,6 +24,14 @@
     {:text-align "center"
      :font-size base/small
      :letter-spacing (px 1)}]
+   [:.c-calendar__year
+    {:text-align "center"
+     :font-size base/small
+     :margin-top (px 5)
+     :padding "2px 0"
+     :font-weight  "700"
+     :background-color base/color-fg
+     :color base/color-bg}]
    [(at-media {:max-width (px 599)}
               [:.c-calendar
                {:padding-right (px 5)

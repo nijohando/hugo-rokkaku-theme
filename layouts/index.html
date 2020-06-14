@@ -9,17 +9,17 @@
 
 <section class="p-articles">
 {{$limit := .Site.Params.limitNumberOfLatests | default 5}}
-{{ range first $limit .Data.Pages.ByLastmod.Reverse }}
+{{ range first $limit .Site.RegularPages.ByLastmod.Reverse }}
 {{ .Render "summary"}}
 {{ end }}
-{{$len := len .Data.Pages}}
+{{$len := len .Site.RegularPages}}
 {{$numberOfOtherPages := sub $len $limit }}
 {{ if gt $numberOfOtherPages 0 }}
 <div class="p-articles__footer">
   <div class="p-articles__footer__left--some"></div>
   <div class="p-articles__footer__right">
     <span>
-      他 {{ $numberOfOtherPages }} 件の記事があります。
+      他 {{ $numberOfOtherPages }} 件の記事
     </span>
   </div>
 </div>

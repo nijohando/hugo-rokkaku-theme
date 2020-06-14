@@ -4,6 +4,7 @@
       <div class="c-calendar__month">{{ index $.Site.Data.jmonth (printf "%d" .Date.Month) }}</div>
       <div class="c-calendar__day-of-month"><span>{{ .Date.Format "2" }}</span></div>
       <div class="c-calendar__day-of-week"><span>{{ index $.Site.Data.jweekday (printf "%s" .Date.Weekday) }}</span></div>
+      <div class="c-calendar__year">{{ .Date.Format "2006" }}</div>
   </div>
 
   <div class="c-heading">
@@ -19,7 +20,7 @@
 
     <div class="c-heading__title">
 
-      <i class="c-heading__title__icon fa fa-tag fa-2x" aria-hidden="true"></i>
+      <i class="c-heading__title__icon"></i>
 
       <h1 class="c-heading__title__text"><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h1>
 

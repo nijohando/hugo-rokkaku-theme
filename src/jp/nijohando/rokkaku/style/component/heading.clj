@@ -12,12 +12,14 @@
    [:.c-heading
     {:color base/color-fg
      :position "relative"
+     :border-left (str "2px solid " base/color-fg)
      :width (percent 100)}
     [:.c-stamp-small
      {:position "absolute"
-      :left (px -73)
-      :top (px 55)
-      :z-index 0}]]
+      :left (px -55)
+      :top (px 80)
+      :opacity "0.8"
+      :z-index 10}]]
    [:.c-heading__title
     {:display "flex"
      :align-items "center"
@@ -27,10 +29,15 @@
      :margin-bottom base/xx-small}]
    [:.c-heading__title__icon
     {:position "absolute"
+     :width (px 14)
+     :height (px 14)
+     :background-color base/color-fg
+     :border-radius (percent 50)
      :z-index 10
-     :left (px -3)}]
+     :left (px -8)
+     :top (px 53)}]
    [:.c-heading__title__text
-    {:font-size base/x-large
+    {:font-size base/xx-large
      :margin-left (px 30)
      :line-height (em 1.5)
      :z-index 1}]
@@ -61,7 +68,12 @@
               [:.c-heading
                [:.c-stamp-small
                {:left (px -55)
-                :top (px 55)}]]
+                :top (px 68)}]]
+              [:.c-heading__title__icon
+               {:top (px 43)
+                :left (px -6)
+                :height (px 10)
+                :width (px 10) }]
               [:.c-heading__title__text
                {:font-size (rem 1.1)}]
               [:.c-heading__summary

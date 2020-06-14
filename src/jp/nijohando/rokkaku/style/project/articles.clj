@@ -14,7 +14,7 @@
    [:.p-articles__heading
     {:display "flex"}
     [:.c-heading
-     {:margin-bottom base/large}]]
+     {:padding-bottom base/large}]]
    [:.p-articles__footer
     {:display "flex"}]
    [:.p-articles__footer__left--some :.p-articles__footer__left--none
