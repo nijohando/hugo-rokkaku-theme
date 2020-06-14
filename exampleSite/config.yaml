@@ -1,0 +1,25 @@
+baseurl: "http://example.com/"
+title: "六角"
+languageCode: "ja-jp"
+hasCJKLanguage: true
+theme: "hugo-rokkaku-theme"
+
+taxonomies:
+  tag: "tags"
+  archive: "archives"
+
+params:
+  limitNumberOfLatests: 5
+  logoHtml: "<figure><ul class=\"c-logo\"><li/><li/><li/></ul></figure>"
+  styles:
+    - "/css/logo.css"
+  github: "example"
+  twitter: "example"
+  copyrightHtml: "&copy; nijohando.jp 2020"
+
+  highlightjs:
+  #  styleUrl = "/css/highlight.default.css"
+  #  scriptUrl = "/js/highlight.pack.js"
+
+  ga:
+  #  trackingId = "xxxx"

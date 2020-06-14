@@ -12,12 +12,14 @@
    [:.c-heading
     {:color base/color-fg
      :position "relative"
+     :border-left (str "2px solid " base/color-fg)
      :width (percent 100)}
     [:.c-stamp-small
      {:position "absolute"
-      :left (px -73)
-      :top (px 55)
-      :z-index 0}]]
+      :left (px -55)
+      :top (px 80)
+      :opacity "0.8"
+      :z-index 10}]]
    [:.c-heading__title
     {:display "flex"
      :align-items "center"
@@ -27,10 +29,15 @@
      :margin-bottom base/xx-small}]
    [:.c-heading__title__icon
     {:position "absolute"
+     :width (px 14)
+     :height (px 14)
+     :background-color base/color-fg
+     :border-radius (percent 50)
      :z-index 10
-     :left (px -3)}]
+     :left (px -8)
+     :top (px 53)}]
    [:.c-heading__title__text
-    {:font-size base/x-large
+    {:font-size base/xx-large
      :margin-left (px 30)
      :line-height (em 1.5)
      :z-index 1}]
@@ -47,21 +54,42 @@
      :justify-content "flex-end"
      :flex-wrap "wrap"
      :margin-left (rem 0.5)}]
+   [:.c-heading__tags
+    {:list-style-type  "none"
+     :display  "flex"
+     :flex-direction  "row"
+     :align-items  "center"
+     :justify-content  "flex-end"
+     :flex-wrap  "wrap"}]
    [:.c-heading__tags__tag
     {:font-family base/font-sans-serif
-     :font-size base/small}
-    [:a {:color base/color-fg
-         :font-family base/font-sans-serif}]
-    [(& first-child)
-     {:padding "0 10px 0 0"}]
-    [(& (not first-child))
-     {:padding "0 10px 0 10px"
-      :border-left (str "2px solid " base/color-fg)}]]
+     :margin-top "6px"}
+     [:a {:color base/color-gray
+          :display "inline-block"
+          :font-size base/small
+          :background-color base/color-light-gray
+          :padding "10px"
+          :border-radius (px 5)
+          :font-family base/font-sans-serif}
+      [:&:hover
+        {:background-color base/color-gray
+         :color base/color-bg
+         :transition "all .25s ease-in"
+         :text-decoration "none"}]]
+     [(& first-child)
+       {:padding  "0 3px 0 0"}]
+     [(&  (not first-child))
+       {:padding  "0 3px 0 3px"}]]
    [(at-media {:max-width (px 599)}
               [:.c-heading
                [:.c-stamp-small
                {:left (px -55)
-                :top (px 55)}]]
+                :top (px 68)}]]
+              [:.c-heading__title__icon
+               {:top (px 46)
+                :left (px -6)
+                :height (px 10)
+                :width (px 10) }]
               [:.c-heading__title__text
                {:font-size (rem 1.1)}]
               [:.c-heading__summary

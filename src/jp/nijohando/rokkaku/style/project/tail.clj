@@ -46,27 +46,13 @@
     {:display "flex"
      :align-items "stretch"
      :border-top (str "2px solid #555555")
-     :justify-content "space-between"}
-   ]
-   [:.p-tail__contact
-    {:font-size base/x-small
-     :text-align "center"
-     :color base/color-fg-sub
-     :padding-left base/large
-     :padding-top (rem 0.7)
-     :padding-bottom (rem 0.7)}
-    [(> a)
-     {:color base/color-fg-sub}]
-    [(( > a) hover)
-     {:text-decoration "none"
-      :color base/color-bg
-      :background "none"}]
-    [:i {:display "inline-block" }
-     [(& first-of-type) {:margin-right (rem 0.5)}]]]
+     :justify-content "flex-end"}
+    ]
    [:.p-tail__copyright
     {:font-family base/web-font1
      :padding-right base/large
      :font-size (rem 0.8)
      :color base/color-fg-sub
-     :padding-top (rem 1.5)}]])
+     :padding (rem 1)
+     }]])
 

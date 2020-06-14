@@ -1,7 +1,7 @@
 +++
 title = "Hugo用Theme「六角」について"
 date = "2016-12-23"
-lastmod = "2016-12-31"
+lastmod = "2020-06-20"
 tags = ["hugo", "theme", "design"]
 archives = "2016"
 toc = true
@@ -12,7 +12,7 @@ toc = true
 
 <!--more-->
 
-# インストール
+## インストール
 
 Hugoのサイトディレクトリのルートでテーマをclone。
 
@@ -26,9 +26,9 @@ config.toml でテーマを指定。
 theme = "rokkaku"
 ```
 
-# セットアップ
+## セットアップ
 
-## ロゴとタイトル
+### ロゴとタイトル
 
 画面上部のタイトルとロゴを設定する。
 
@@ -38,7 +38,7 @@ title = "六角"
   logoHtml = "<figure><ul class=\"c-logo\"><li/><li/><li/></ul></figure>"
 ```
 
-## 表示する最新記事件数
+### 表示する最新記事件数
 
 最新記事一覧画面に表示する件数を設定する。
 
@@ -47,16 +47,16 @@ title = "六角"
   limitNumberOfLatests = 5
 ```
 
-## 著作権表示
+### 著作権表示
 
 画面下部に表示する著作権表示の内容を設定する。
 
 ```toml
 [params]
-  copyrightHtml = "Copyright &copy; nijohando.jp 2016&ndash;2017"
+  copyrightHtml = "Copyright &copy; nijohando.jp 2016&ndash;2020"
 ```
 
-## サイト固有スタイルシートの追加
+### サイト固有スタイルシートの追加
 
 サイト固有のスタイルシートを追加したい場合、config.toml にてスタイルシートをパスを指定する。
 
@@ -65,7 +65,7 @@ title = "六角"
   styles = ["/css/logo.css"]
 ```
 
-## シンタックスハイライト
+### シンタックスハイライト
 
 シンタックスハイライトには[highlightjs](https://highlightjs.org/)を利用。デフォルトではCDN版を利用する。
 
@@ -81,7 +81,7 @@ CDN版では対応言語が不足している場合、config.toml にて任意�
     url = "/js/highlight.pack.js"
 ```
 
-## WEBアイコンフォント
+### WEBアイコンフォント
 
 アイコンフォントに[Font Awesome](http://fontawesome.io/)を利用する。デフォルトではBootstrap CDN版を使用する。
 
@@ -97,7 +97,7 @@ Font Awesome CDNのembed code版をを利用したい場合は、 config.toml �
     embedCode = "xxxx"
 ```
 
-## Googleアナリティクス
+### Googleアナリティクス
 
 Googleアナリティクスを利用する場合は、 config.toml にて トラッキングID を指定する。
 
@@ -108,10 +108,9 @@ Googleアナリティクスを利用する場合は、 config.toml にて トラ
     trackingId = "xxxx"
 ```
 
+## 日付について
 
-# 日付について
-
-## 記事の作成日と更新日
+### 記事の作成日と更新日
 
 記事一覧画面、記事画面ともに記載される日付には作成日が使用される。
 更新日については記事一覧画面では作成日の下に日付印形式(小)で表示され、記事画面では画面右上に日付印形式（大）で表示される。
@@ -125,14 +124,14 @@ lastmod = "2016-12-27"
 +++
 ```
 
-## 日本語化された月と曜日表示
+### 日本語化された月と曜日表示
 
 月と曜日が日本語化されている。
 `data/jmonth.toml` `data/jweekday.toml` に月、曜日に応じた文字列が定義可能。
 
 
 
-# 目次について
+## 目次について
 
 記事毎に目次の表示を有効、無効が指定できる。  
 フロントマター *toc* プロパティを有効にすることで **ブラウザのウインドウサイズが800px以上の幅を持つ場合** 画面右側に表示される。
@@ -142,7 +141,7 @@ lastmod = "2016-12-27"
 toc = true
 +++
 ```
-# 年別の記事一覧表示
+## 年別の記事一覧表示
 
 画面下部のTaxonomyフッタに記事の年別一覧画面へのリンクが表示される。
 フロントマター *archives* プロパティ に年を指定することで当該記事が指定の年別記事一覧に表示される。
