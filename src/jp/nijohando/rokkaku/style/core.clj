@@ -32,6 +32,6 @@
   (heading/component)
   (signboard/project)
   (articles/project)
-;  (highlight/project)
+  (highlight/project)
   (article/project)
   (tail/project))
