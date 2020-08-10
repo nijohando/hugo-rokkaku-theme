@@ -29,7 +29,8 @@
      :-webkit-hyphens 'none
      :-moz-hyphens 'none
      :-ms-hyphens 'none
-     :hyphens "none"}]
+     :hyphens "none"
+     :padding 0}]
    [(pre (attr-matches "class" "language-"))
     {:padding (rem 1)
      :margin "0.5em 0"
