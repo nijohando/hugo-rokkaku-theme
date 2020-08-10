@@ -30,6 +30,69 @@
 (def color-heading2-2 color-charcoal)
 (def color-heading3 color-charcoal)
 
+
+(def color-estuary-base00 "#22221b")
+(def color-estuary-base01 "#302f27")
+(def color-estuary-base02 "#5f5e4e")
+(def color-estuary-base03 "#6c6b5a")
+(def color-estuary-base04 "#878573")
+(def color-estuary-base05 "#929189")
+(def color-estuary-base06 "#e7e6df")
+(def color-estuary-base07 "#f4f3ec")
+(def color-estuary-base08 "#ba6236")
+(def color-estuary-base09 "#ae7313")
+(def color-estuary-base0a "#a5980d")
+(def color-estuary-base0b "#7d9726")
+(def color-estuary-base0c "#5b9d48")
+(def color-estuary-base0d "#36a166")
+(def color-estuary-base0e "#5f9182")
+(def color-estuary-base0f "#9d6c7c")
+
+(def highlight-inline-code color-estuary-base05)
+(def highlight-background "#000000")
+
+(def highlight-comment color-estuary-base02)
+(def highlight-block-comment color-estuary-base02)
+(def highlight-prolog color-estuary-base02)
+(def highlight-doctype color-estuary-base02)
+(def highlight-cdata color-estuary-base02)
+
+(def highlight-punctuation color-estuary-base05)
+
+(def highlight-attr-name color-estuary-base09)
+(def highlight-tag color-estuary-base08)
+(def highlight-namespace color-estuary-base08)
+(def highlight-deleted color-estuary-base08)
+
+(def highlight-function-name color-estuary-base0a)
+
+(def highlight-boolean color-estuary-base0f)
+(def highlight-number color-estuary-base0f)
+(def highlight-function color-estuary-base0a)
+
+(def highlight-property color-estuary-base0e)
+(def highlight-class-name color-estuary-base0e)
+(def highlight-constant color-estuary-base0e)
+(def highlight-symbol color-estuary-base0e)
+
+(def highlight-selector color-estuary-base0e)
+(def highlight-important color-estuary-base0e)
+(def highlight-atrule color-estuary-base0e)
+(def highlight-keyword color-estuary-base08)
+(def highlight-builtin color-estuary-base0e)
+
+(def highlight-string color-estuary-base0b)
+(def highlight-char color-estuary-base0b)
+(def highlight-attr-value color-estuary-base0b)
+(def highlight-regex color-estuary-base0b)
+(def highlight-variable color-estuary-base0b)
+
+(def highlight-operator color-estuary-base0d)
+(def highlight-entity color-estuary-base0d)
+(def highlight-url color-estuary-base0d)
+
+(def highlight-inserted "green")
+
 (def SawarabiMincho "Sawarabi Mincho")
 (def IstokWeb "Istok Web")
 (def Robot "Roboto Mono")
