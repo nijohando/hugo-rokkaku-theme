@@ -8,6 +8,12 @@ taxonomies:
   tag: "tags"
   archive: "archives"
 
+markup:
+  highlight:
+    codeFences: false
+    guessSyntax: false
+    noClasses: false
+
 params:
   limitNumberOfLatests: 5
   logoHtml: "<figure><ul class=\"c-logo\"><li/><li/><li/></ul></figure>"
@@ -16,10 +22,6 @@ params:
   github: "example"
   twitter: "example"
   copyrightHtml: "&copy; nijohando.jp 2020"
-
-  highlightjs:
-  #  styleUrl = "/css/highlight.default.css"
-  #  scriptUrl = "/js/highlight.pack.js"
 
   ga:
   #  trackingId = "xxxx"

@@ -70,20 +70,6 @@
       :margin-bottom base/x-small}]
     [(s/+ :h1 :h2)
      {:margin-top (* base/large 1)}]
-    [(code (not :.hljs))
-     {:color base/color-code-fg
-      :background-color base/color-code-bg
-      :font-size base/small
-      :font-family base/font-mono
-      :margin "0 0.3rem"
-      :padding "0.1rem 0.8rem"}]
-    [:pre
-     {:margin "1rem 0 2em"}
-     [:code
-      {:background-color "black"
-       :font-size base/small
-      :padding "1em 1.2rem"
-      :line-height (rem 1.2)}]]
     [:p
      {:margin "1rem 0"}]
     [:ul
